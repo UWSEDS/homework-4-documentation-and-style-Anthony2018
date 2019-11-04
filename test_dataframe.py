@@ -1,4 +1,4 @@
-""" pylint verion test_dataframe """
+""" pylint verion test_dataframe to test the csv file and data frame """
 import pandas as pd
 import numpy as np
 import requests
@@ -13,7 +13,7 @@ def save_file(url, file_name):
 
 #Check for nan values:
 def check_nan(data_frame):
-    """ check nan """
+    """ check nan: if there are nan in dataframe, input is dataframe"""
     flag = 0
     for col in data_frame.columns:
         # print('col',col)
@@ -29,7 +29,7 @@ def check_nan(data_frame):
     return False
 
 def check_row(data_frame):
-    """ check row """
+    """Verify that the dataframe has at least one row, input is dataframe """
     row = data_frame.shape[0]
     if row <= 1:
         print('not pass the row check, row is', row)
@@ -38,7 +38,7 @@ def check_row(data_frame):
     return True
 
 def check_type(dataframe, colomnname):
-    """ check type """
+    """ Check that all columns have values of the corect type. input is dataframe"""
     rember_class = {}
     for ls_name in colomnname:
         rember_class[ls_name] = type(dataframe[ls_name][0])

@@ -1,4 +1,6 @@
-""" pylint verion function """
+""" pylint verion function test_create_dataframe that takes as input:
+(a) a pandas DataFrame
+(b) a list of column names. """
 import requests
 
 def save_file(url, file_name):
