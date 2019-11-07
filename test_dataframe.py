@@ -6,6 +6,8 @@ import function
 def save_file(url, file_name):
     """
     save file
+    input: url and file name
+    return: no return
     """
     r_file = requests.get(url)
     with open(file_name, 'wb') as f_name:
@@ -13,7 +15,11 @@ def save_file(url, file_name):
 
 #Check for nan values:
 def check_nan(data_frame):
-    """ check nan: if there are nan in dataframe, input is dataframe"""
+    """
+    check nan: if there are nan in dataframe, input is dataframe
+    input: data frame
+    return: true or false
+    """
     flag = 0
     for col in data_frame.columns:
         # print('col',col)
@@ -29,7 +35,11 @@ def check_nan(data_frame):
     return False
 
 def check_row(data_frame):
-    """Verify that the dataframe has at least one row, input is dataframe """
+    """
+    Verify that the dataframe has at least one row, input is dataframe
+    input: data frame
+    return: true or false
+    """
     row = data_frame.shape[0]
     if row <= 1:
         print('not pass the row check, row is', row)
@@ -38,7 +48,11 @@ def check_row(data_frame):
     return True
 
 def check_type(dataframe, colomnname):
-    """ Check that all columns have values of the corect type. input is dataframe"""
+    """
+    Check that all columns have values of the corect type. input is dataframe
+    input: data frame
+    return: true or false
+    """
     rember_class = {}
     for ls_name in colomnname:
         rember_class[ls_name] = type(dataframe[ls_name][0])

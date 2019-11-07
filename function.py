@@ -6,6 +6,8 @@ import requests
 def save_file(url, file_name):
     """
     save file
+    input: url, file name
+    no return
     """
     r_file = requests.get(url)
     with open(file_name, 'wb') as f_name:
@@ -22,6 +24,8 @@ def save_file(url, file_name):
 def test_create_dataframe(dataframe, colomnname):
     """
     test funciton to find if the input is legal
+    input: dataframe, colomnname
+    return true or flase
     """
     if dataframe.shape[0] < 10:
         return False
